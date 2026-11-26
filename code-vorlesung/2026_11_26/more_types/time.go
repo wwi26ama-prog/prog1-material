@@ -21,3 +21,10 @@ func (t Time) String() string {
 	//
 	//return result
 }
+
+// Normalize rechnet die Minuten und Stunden
+// so um, dass die Stunden <= 23 und die Minuten <= 59 sind.
+func (t *Time) Normalize() {
+	t.Hours = (t.Hours + t.Minutes/60) % 24
+	t.Minutes = t.Minutes % 60
+}
