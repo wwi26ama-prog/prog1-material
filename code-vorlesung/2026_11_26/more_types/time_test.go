@@ -6,19 +6,23 @@ func ExampleTime() {
 
 	t1 := Time{13, 23}
 	t2 := Time{Minutes: 30, Hours: 16}
-	t3 := Time{Hours: 15, Minutes: 90}
+	t3 := New(15, 90)
 
 	fmt.Println(t1.String())
 	fmt.Println(t2)
 	fmt.Println(t3)
 
 	fmt.Println(t1 == t2)
+	fmt.Println(t2 == t3)
+	fmt.Println(t2.Equals(t3))
 
 	// Output:
 	// 13:23
 	// 16:30
 	// 16:30
 	// false
+	// true
+	// true
 }
 
 func ExampleTime_Normalize() {
