@@ -19,6 +19,10 @@ func New(rank rank.Rank, suit suit.Suit) Card {
 	}
 }
 
+func (c Card) Matches(other Card) bool {
+	return c.Rank == other.Rank || c.Suit == other.Suit
+}
+
 // String gibt eine Darstellung der Karte als AsciiArt zurück.
 func (c Card) String() string {
 	lines := []string{
