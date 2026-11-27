@@ -9,3 +9,7 @@ const (
 	Pik   Suit = "♠"
 	Kreuz Suit = "♣"
 )
+
+func (s Suit) String() string {
+	return string(s)
+}
